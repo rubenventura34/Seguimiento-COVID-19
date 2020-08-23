@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  //apiUrl: "http://covid-19sv.herokuapp.com/api/"
+  apiUrl: "http://192.168.1.6:8000/api/"
 };
 
 /*

@@ -1,0 +1,28 @@
+<ion-content>
+    <div class="container">
+        <div class="ion-padding heading">
+            <ion-text color="gob">
+                <h1><strong>¿Presentas algún otro<br>Sintoma?</strong></h1>
+            </ion-text>
+            
+          </div>
+          <ion-item>
+              <ion-textarea rows="7" [(ngModel)]="postData.otros" placeholder="Describe brevemente (opcional)">
+
+                </ion-textarea>
+          </ion-item>
+          
+          
+    </div>
+
+</ion-content>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <div class="ion-padding">
+        <ion-button (click)="finalizar()" expand="block" color="primary">
+            Finalizar
+          </ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+

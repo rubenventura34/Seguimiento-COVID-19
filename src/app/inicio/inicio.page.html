@@ -1,0 +1,117 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="gob">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>COVID-19 SV</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar color="primary">
+      <ion-title size="large">COVID-19 SV</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <div class="ion-padding" style="padding-bottom: 0;">
+        <strong class="capitalize">COVID-19</strong>
+        <p>Seguimiento a tus sintomas de esta pandemia</p>
+        <ion-grid>
+            <ion-row>
+              <ion-col offset="3" size="2">
+                  <ion-fab-button size="small" color="light">
+                      <ion-icon name="person-outline"></ion-icon>
+                    </ion-fab-button>
+              </ion-col>
+              <ion-col size="2">
+                      <ion-fab-button [routerLink]="['/main/estadisticas']" size="small" color="light">
+                          <ion-icon name="bar-chart-outline"></ion-icon>
+                      </ion-fab-button>
+              </ion-col>
+              <ion-col size="2">
+                  <ion-fab-button [routerLink]="['/main/ayuda']" size="small" color="light">
+                      <ion-icon name="help-outline"></ion-icon>
+                    </ion-fab-button>
+              </ion-col>
+              <ion-col size="3"></ion-col>
+            </ion-row>
+          </ion-grid>
+    </div>
+    
+    <div *ngIf="ultimosReportes && userType == 1">
+
+      <ion-card color="gob-light">
+        <ion-item color="gob-light" lines="none" (click)="doEvaluation()">
+          <ion-label>
+            <h2><strong>HOY</strong></h2>
+            <h4>{{ dias[6] }}</h4>
+          </ion-label>
+          <ion-icon 
+          [name]="(ultimosReportes['fiebre'][6]) ? 'checkmark-outline' : 'chevron-forward-outline'" slot="end"
+          slot="end"></ion-icon>
+          
+        </ion-item>
+    </ion-card>
+    <ion-card>
+        <ion-item lines="none">
+          <ion-label>
+            <h2><strong>AYER</strong></h2>
+            <h4>{{ dias[5] }}</h4>
+          </ion-label>
+          <ion-icon 
+          [name]="(ultimosReportes['fiebre'][5]) ? 'checkmark-outline' : 'close-outline'" slot="end" 
+          [class]="(ultimosReportes['fiebre'][5]) ? 'checked' : 'incompleted'"></ion-icon>
+        </ion-item>
+    </ion-card>
+    <ion-card class="history">
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <h6><strong class="day">{{ capitalize(dias[4][1]) }}</strong><small> {{ dias[4][0] }}</small></h6>
+          </ion-label>
+          <ion-icon 
+          [name]="(ultimosReportes['fiebre'][4]) ? 'checkmark-outline' : 'close-outline'" slot="end"
+          [class]="(ultimosReportes['fiebre'][4]) ? 'checked__small' : 'incompleted__small'"
+          ></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h6><strong class="day">{{ capitalize(dias[3][1]) }}</strong><small> {{ dias[3][0] }}</small></h6>
+          </ion-label>
+          <ion-icon 
+          [name]="(ultimosReportes['fiebre'][3]) ? 'checkmark-outline' : 'close-outline'" slot="end"
+          [class]="(ultimosReportes['fiebre'][3]) ? 'checked__small' : 'incompleted__small'"
+          ></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h6><strong class="day">{{ capitalize(dias[2][1]) }}</strong><small> {{ dias[2][0] }}</small></h6>
+          </ion-label>
+          <ion-icon 
+          [name]="(ultimosReportes['fiebre'][2]) ? 'checkmark-outline' : 'close-outline'" slot="end"
+          [class]="(ultimosReportes['fiebre'][2]) ? 'checked__small' : 'incompleted__small'"
+          ></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h6><strong class="day">{{ capitalize(dias[1][1]) }}</strong><small> {{ dias[1][0] }}</small></h6>
+          </ion-label>
+          <ion-icon 
+          [name]="(ultimosReportes['fiebre'][1]) ? 'checkmark-outline' : 'close-outline'" slot="end"
+          [class]="(ultimosReportes['fiebre'][1]) ? 'checked__small' : 'incompleted__small'"
+          ></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+
+    </div>
+
+    
+    
+  </div>
+  <div class="ion-padding" *ngIf="userType != 1">
+    <strong class="capitalize">COVID-19</strong>
+  </div>
+</ion-content>

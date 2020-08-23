@@ -1,0 +1,40 @@
+<ion-content>
+  <ion-slides #slides>
+    <ion-slide>
+      <div class="slide">
+        <img src="assets/primeralinea.png"/>
+        <h2>Bienvenido</h2>
+        <p>Gracias por ayudarnos en el control y seguimiento de la pandemia COVID-19, juntos podremos salir adelante.</p>
+        <ion-button color="primary" (click)="next()">
+          Continuar
+        </ion-button>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="slide" style="padding:20px;">
+        <img src="assets/covid.png">
+        <h2>Cuentanos en que situación te encuentras</h2>
+        <ion-grid style="margin-top: 60px;">
+          <ion-row>
+            <ion-button color="primary" [routerLink]="['/ingresar']">
+              Soy paciente
+            </ion-button>
+          </ion-row>
+          <ion-row>
+            <ion-button color="secondary" [routerLink]="['/ingresar-pariente']">
+              Soy familiar
+            </ion-button>
+          </ion-row>
+          <ion-row>
+            <ion-button color="success" (click)="loginAsGuest()">
+              Quiero información
+            </ion-button>
+          </ion-row>
+        </ion-grid>
+        
+        
+        
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

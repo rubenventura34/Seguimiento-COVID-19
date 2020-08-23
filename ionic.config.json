@@ -1,5 +1,7 @@
 {
   "name": "Seguimiento COVID-19",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

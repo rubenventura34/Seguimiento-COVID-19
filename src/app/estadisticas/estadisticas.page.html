@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="gob">
+      <ion-buttons slot="start">
+        <ion-back-button color="light"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Estadisticas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <canvas #chart height="300" id="linechart"></canvas>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Importante:</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Este es un estimado de tus sintomas durante los ultimos 8 dias,
+          recuerda que si tus sintomas persisten debes acudir a centro de salud
+          o llamar al <b>132</b>.<br>
+          <span style="color: darkred">* Esta información no será publicada en ningún medio, ni será compartida
+          con ninguna entidad fuera del gobierno.</span>
+        </p>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

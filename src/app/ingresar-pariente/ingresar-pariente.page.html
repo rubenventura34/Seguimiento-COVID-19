@@ -1,0 +1,18 @@
+<ion-content color="gob">
+  <div class="ion-padding">
+      <img src="assets/banner-covid-19v5.png" alt="" srcset="">
+      
+      <h1 class="titulo">Seguimiento<br>COVID-19</h1>
+      
+          <ion-label>Código de Acceso</ion-label>
+          <ion-input class="ion-border" [(ngModel)]="postData.codigo" placeholder="Ingrese su código de acceso"></ion-input>
+          
+          <br>
+
+          <ion-button color="light" (click)="ingresar()" expand="block">
+            Ingresar
+          </ion-button>
+
+  </div>
+  
+</ion-content>

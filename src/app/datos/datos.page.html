@@ -1,0 +1,103 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="gob">
+      <ion-buttons slot="start">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Datos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <!--<iframe id="datos" src="https://infogram.com/_/fx5xud0FhM7Z9NS6qpxs?src=embed"></iframe>-->
+  <div class="ion-padding">
+    <p>{{ actualizacion }}</p>
+    <ion-grid class="datos">
+        <ion-row>
+            <ion-col>
+                <ion-card style="background-color: #f5f7ff;">
+                  <ion-card-header>
+                      <ion-icon name="bar-chart-outline" style="color:#1976d2"></ion-icon>
+                      <ion-card-title style="color:#1976d2">
+                          {{ confirmados }}
+                        </ion-card-title>
+                        <ion-card-subtitle style="margin-top: 0;">
+                          Confirmados
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                </ion-card>
+              </ion-col>
+          <ion-col>
+            <ion-card style="background-color: #f5ffff;">
+              <ion-card-header>
+                  <ion-icon name="medkit-outline" style="color:#0097a7"></ion-icon>
+                  <ion-card-title style="color:#0097a7">
+                      {{ activos }}
+                    </ion-card-title>
+                    <ion-card-subtitle style="margin-top: 0;">
+                      Activos
+                    </ion-card-subtitle>
+                </ion-card-header>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+          <ion-col>
+              <ion-card style="background-color: #f5fff5;">
+                <ion-card-header>
+                    <ion-icon name="heart-outline" style="color:#43a047"></ion-icon>
+                    <ion-card-title style="color:#43a047">
+                        {{ recuperados }}
+                      </ion-card-title>
+                      <ion-card-subtitle style="margin-top: 0;">
+                        Recuperados
+                      </ion-card-subtitle>
+                  </ion-card-header>
+              </ion-card>
+            </ion-col>
+        <ion-col>
+          <ion-card style="background-color: #fff5f6;">
+            <ion-card-header>
+                <ion-icon name="skull-outline" style="color:#d32f2f"></ion-icon>
+                <ion-card-title style="color:#d32f2f">
+                    {{ fallecidos }}
+                  </ion-card-title>
+                  <ion-card-subtitle style="margin-top: 0;">
+                    Fallecidos
+                  </ion-card-subtitle>
+              </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  
+  </div>
+
+  
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar color="gob">
+        <ion-grid>
+            <ion-row>
+                <ion-label style="width: 100%;color:#ffeb3b;">{{ actualizacionResumen }}</ion-label>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <span>+{{ nuevosCasos }}</span>
+                    <span class="resumen">Confirmados</span>
+                  </ion-col>
+              
+                  <ion-col>
+                    <span>+{{ nuevosRecuperados}}</span>
+                    <span class="resumen">Recuperados</span>
+                  </ion-col>
+              
+                  <ion-col>
+                    <span>+{{ nuevosDecesos }}</span>
+                    <span class="resumen">Fallecidos</span>
+                  </ion-col>
+            </ion-row>
+         </ion-grid>
+    </ion-toolbar>
+</ion-footer>

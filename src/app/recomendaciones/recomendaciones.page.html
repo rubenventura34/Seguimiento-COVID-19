@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+    <ion-toolbar color="gob">
+      <ion-buttons slot="start">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Recomendaciones</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let recomendacion of recomendaciones; let i = index" (click)="showModal(i)">
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="4">
+            <img src="assets/{{ recomendacion.icono }}">
+          </ion-col>
+          <ion-col>
+              <h5 class="titulo">{{ recomendacion.titulo }}</h5>
+              <p>{{ recomendacion.descripcion }}</p>          
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" (click)="hideModal()">&times;</span>
+          <img [src]="gifUrl" alt="" srcset="">
+          <h4 style="text-align: center;">{{ titulo }}</h4>
+          <p>{{ indicacion }}</p>
+        </div>
+      
+      </div>
+</ion-content>
