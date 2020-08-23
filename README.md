@@ -19,5 +19,5 @@ npm install
 
 ## Ejecución
 ```sh
-npm run serve
+ionic serve
 ```
